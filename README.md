@@ -36,21 +36,25 @@ Exploratory data analysis reveals key insights about house price determinants. T
 
 #### Missing Values Analysis
 
-![Missing Values Heatmap](Figures/missingvalues_heatmap)
+![Missing Values Heatmap](Figures/missing_heatmap.png)
 
 #### SalePrice Distribution
 
 SalePrice distribution shows skewness that required to be handled by normalization 
 
-![SalePrice Distribution](Insert-Pipeline-Diagram-Here)
+![SalePrice Distribution](Figures/saleprice_dist.png)
+
+#### Quality vs SalePrice Relationship
+
+![Quality vs SalePrice](Figures/overall_qual_vs_saleprice.png)
 
 #### Correlation Analysis
 
-![Features Correlation ](Insert-Pipeline-Diagram-Here)
+![Features Correlation ](Figures/correlation_heatmap.png)
 
 #### Feature Relationships
 
-![Features Pair Plot](Insert-Pipeline-Diagram-Here)
+![Features Pair Plot](Figures/output.png)
 
 ### 3. Feature Engineering
 

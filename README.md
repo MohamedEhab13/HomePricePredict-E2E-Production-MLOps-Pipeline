@@ -1,102 +1,95 @@
-# End-to-End HomePricePredict: Production MLOps Pipeline
+# HomePricePredict-E2E: Production MLOps Pipeline
 
-![MLOps Pipeline Architecture](Figures/diagram.png) <!-- Placeholder for ZenML/MLflow pipeline diagram -->
+![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
+![MLflow](https://img.shields.io/badge/MLflow-Latest-green)
+![ZenML](https://img.shields.io/badge/ZenML-Latest-orange)
+![License](https://img.shields.io/badge/License-MIT-yellow)
 
-## Overview
-An end-to-end machine learning solution for predicting residential house prices, implementing MLOps best practices with ZenML for pipeline orchestration and MLflow for experiment tracking. Covers the full lifecycle from data analysis to production-ready model deployment.
+A comprehensive end-to-end MLOps pipeline for house price prediction, leveraging modern software engineering design patterns and best practices.
 
-Key Components
-1. Exploratory Data Analysis
-Missing Values <!-- Missing Values Heatmap -->
+## Project Overview
 
-python
-# Skewness treatment example
-df['SalePrice'] = np.log1p(df['SalePrice'])
-Quality Impact <!-- OverallQual vs SalePrice Boxplot -->
-Correlations <!-- Feature Correlation Heatmap -->
+HomePricePredict-E2E is a production-grade machine learning pipeline that demonstrates the complete lifecycle of a machine learning project from data ingestion to model deployment. The project uses MLflow for experiment tracking and ZenML for pipeline orchestration, ensuring reproducibility, scalability, and maintainability.
 
-2. Data Preprocessing Pipeline
-ZenML Steps:
+### ZenML Pipeline Architecture
 
-Missing value imputation
+[//]: # (INSERT ZENML PIPELINE VISUALIZATION HERE)
 
-Temporal feature engineering
+## Features
 
-Outlier detection
+- End-to-end ML pipeline for house price prediction
+- Modular components using design patterns (Factory, Strategy, Template)
+- Comprehensive data preprocessing and feature engineering
+- Automated experiment tracking with MLflow
+- Production deployment with monitoring capabilities
+- CI/CD integration for automated model updates
 
-Feature scaling
+## Pipeline Stages
 
-python
-@step
-def handle_missing_values(df: pd.DataFrame) -> pd.DataFrame:
-    df['LotFrontage'] = df.groupby('Neighborhood')['LotFrontage'].transform(
-        lambda x: x.fillna(x.median()))
-    return df
-3. Model Training & Evaluation
-Algorithm	Hyperparameters	MLflow Run
-XGBoost	max_depth=5, learning_rate=0.1	Link
-LightGBM	num_leaves=31, min_data_in_leaf=20	Link
-Performance Metrics:
+### 1. Data Ingestion
 
-Model	MAE	RMSE	R² Score
-XGBoost	$18,250	$28,100	0.89
-LightGBM	$17,900	$27,850	0.90
-4. MLOps Architecture
-Diagram
-Code
+The data ingestion component utilizes the Factory design pattern to provide flexible integration with multiple data sources. This modular approach allows the pipeline to seamlessly acquire housing data from various sources while maintaining a consistent interface.
 
+### 2. Data Analysis & Preprocessing
 
+Exploratory data analysis reveals key insights about house price determinants. The preprocessing phase handles missing values and outliers to ensure data quality.
 
+#### Missing Values Analysis
 
+[//]: # (INSERT MISSING VALUES HEATMAP HERE)
 
+#### SalePrice Distribution
 
+[//]: # (INSERT SALEPRICE DISTRIBUTION PLOT SHOWING SKEWNESS)
 
+#### Quality vs SalePrice Relationship
 
+[//]: # (INSERT OVERALL QUALITY VS SALEPRICE BOXPLOT)
 
+#### Correlation Analysis
 
-Getting Started
-Installation
-bash
-git clone https://github.com/yourusername/house-price-prediction.git
-cd house-price-prediction
+[//]: # (INSERT CORRELATION HEATMAP)
 
-# Install dependencies
-pip install -r requirements.txt
+#### Feature Relationships
 
-# Initialize ZenML stack
-zenml init
-zenml integration install mlflow -y
-zenml experiment-tracker register mlflow_tracker --type=mlflow
-Usage
-Run full pipeline:
+[//]: # (INSERT PAIRPLOT OF SELECTED FEATURES)
 
-bash
-python pipelines/training_pipeline.py
-Access MLflow Dashboard:
+### 3. Feature Engineering
 
-bash
-mlflow ui --backend-store-uri file:./mlruns
-Deploy best model:
+The feature engineering pipeline employs the Strategy design pattern to dynamically apply different transformation techniques based on feature characteristics. This approach allows for specialized handling of numerical, categorical, and ordinal features while maintaining clean separation of concerns.
 
-bash
-zenml model-deployer models deploy --model-id=<MLFLOW_RUN_ID>
-Development Guidelines
-Contribution Workflow
-Create feature branch from develop
+### 4. Model Building
 
-Add tests for new functionality
+Model development follows the Template design pattern, providing a consistent framework for experimenting with different algorithms while standardizing the training workflow. This architecture enables systematic comparison of various regression models within the MLflow tracking environment.
 
-Submit PR with MLflow experiment results
+### 5. Model Evaluation
 
-Required Skills:
+Models are evaluated using industry-standard metrics including RMSE, MAE, and R². All experiments are tracked in MLflow, facilitating easy comparison between approaches and enabling data-driven model selection.
 
-ZenML pipeline development
+### 6. Deployment
 
-MLflow experiment tracking
+The final model is deployed as a production service using ZenML's deployment capabilities. The system includes continuous monitoring for performance metrics and data drift detection. CI/CD pipelines ensure the model remains up-to-date as new housing data becomes available.
 
-Feature engineering for tabular data
+## Installation & Usage
 
-License
-MIT License
+### Prerequisites
 
+- Python 3.8+
+- Docker
+- Git
 
+### Setup
+
+1. Clone the repository
+2. Install dependencies: `pip install -r requirements.txt`
+3. Configure ZenML: `zenml init`
+4. Run the pipeline: `python src/main.py`
+
+## License
+
+This project is licensed under the MIT License.
+
+## Acknowledgments
+
+- Housing dataset from [source]
+- Inspired by best practices in MLOps

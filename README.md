@@ -2,28 +2,27 @@
 
 ![MLOps Pipeline Architecture](Figures/diagram.png) <!-- Placeholder for ZenML/MLflow pipeline diagram -->
 
-## Overview
-An end-to-end machine learning solution for predicting residential house prices, implementing MLOps best practices with ZenML for pipeline orchestration and MLflow for experiment tracking. Covers the full lifecycle from data analysis to production-ready model deployment.
+## Project Overview
+An MLOps-powered solution for residential property price prediction, featuring:
+- **Automated ML Pipeline** with ZenML
+- **Experiment Tracking** with MLflow
+- **Production-grade workflows** from raw data to model deployment
 
-## Project Structure
+## Repository Structure
+```plaintext
 house-price-prediction/
 ├── data/
-│ ├── raw/ # Original Ames Housing Dataset
-│ └── processed/ # Cleaned/feature-engineered data
-├── notebooks/ # Exploratory data analysis (EDA)
-├── pipelines/ # ZenML pipeline configurations
+│   ├── raw/                   # Original Ames Housing Dataset
+│   └── processed/            # Cleaned/transformed data
+├── notebooks/                # EDA and prototyping notebooks
+├── pipelines/                # ZenML pipeline configurations
 ├── src/
-│ ├── preprocessing/ # Custom transformers
-│ ├── models/ # Model configurations
-│ └── utils/ # Helper functions
-├── mlruns/ # MLflow experiment tracking
-├── artifacts/ # Serialized models/metrics
+│   ├── preprocessing/        # Custom transformers/scalers
+│   ├── models/               # Model architectures
+│   └── utils/                # Helper functions
+├── mlruns/                   # MLflow experiment tracking
+├── artifacts/                # Serialized models/metrics
 └── README.md
-
-
-## Key Stages
-
-### 1. Data Analysis Phase
 
 #### Missing Values Analysis
 [![Missing Values Heatmap](placeholder.jpg)](link)  

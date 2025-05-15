@@ -34,28 +34,6 @@ The data ingestion component utilizes the Factory design pattern to provide flex
 
 Exploratory data analysis reveals key insights about house price determinants. The preprocessing phase handles missing values and outliers to ensure data quality.
 
-#### Missing Values Analysis
-
-![Missing Values Heatmap](Figures/missing_heatmap.png)
-
-#### SalePrice Distribution
-
-SalePrice distribution shows skewness that required to be handled by normalization 
-
-![SalePrice Distribution](Figures/saleprice_dist.png)
-
-#### Quality vs SalePrice Relationship
-
-![Quality vs SalePrice](Figures/overall_qual_vs_saleprice.png)
-
-#### Correlation Analysis
-
-![Features Correlation ](Figures/correlation_heatmap.png)
-
-#### Feature Relationships
-
-![Features Pair Plot](Figures/output.png)
-
 ### 3. Feature Engineering
 
 The feature engineering pipeline employs the Strategy design pattern to dynamically apply different transformation techniques based on feature characteristics. This approach allows for specialized handling of numerical, categorical, and ordinal features while maintaining clean separation of concerns.

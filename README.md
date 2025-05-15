@@ -13,7 +13,7 @@ HomePricePredict-E2E is a production-grade machine learning pipeline that demons
 
 ### ZenML Pipeline Architecture
 
-[//]: # (INSERT ZENML PIPELINE VISUALIZATION HERE)
+![MLOps Pipeline](Figures/diagram.png)
 
 ## Features
 
@@ -36,23 +36,21 @@ Exploratory data analysis reveals key insights about house price determinants. T
 
 #### Missing Values Analysis
 
-[//]: # (INSERT MISSING VALUES HEATMAP HERE)
+![Missing Values Heatmap](Figures/missingvalues_heatmap)
 
 #### SalePrice Distribution
 
-[//]: # (INSERT SALEPRICE DISTRIBUTION PLOT SHOWING SKEWNESS)
+SalePrice distribution shows skewness that required to be handled by normalization 
 
-#### Quality vs SalePrice Relationship
-
-[//]: # (INSERT OVERALL QUALITY VS SALEPRICE BOXPLOT)
+![SalePrice Distribution](Insert-Pipeline-Diagram-Here)
 
 #### Correlation Analysis
 
-[//]: # (INSERT CORRELATION HEATMAP)
+![Features Correlation ](Insert-Pipeline-Diagram-Here)
 
 #### Feature Relationships
 
-[//]: # (INSERT PAIRPLOT OF SELECTED FEATURES)
+![Features Pair Plot](Insert-Pipeline-Diagram-Here)
 
 ### 3. Feature Engineering
 
